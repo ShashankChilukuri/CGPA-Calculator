@@ -1,0 +1,94 @@
+{% extends "base.html" %}
+
+{% block title %}SGPA Results{% endblock %}
+
+{% block content %}
+    <style>
+        /* Your existing CSS styles here */
+        body {
+            background-color: #f4f4f4;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        .result-details {
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+            padding: 30px;
+            text-align: center;
+            width: 80%;
+            max-width: 600px;
+            margin: 50px auto; /* Center the container */
+            color: black; /* Updated text color */
+            position: relative; /* Added positioning for pseudo-elements */
+        }
+
+        .result-details:before,
+        .result-details:after {
+            content: '';
+            position: absolute;
+            width: 50%;
+            height: 2px;
+            background-color: #007bff;
+            top: 10px;
+
+        }
+
+        .result-details:before {
+            left: 0;
+        }
+
+        .result-details:after {
+            right: 0;
+        }
+
+        .result-details div {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 15px; /* Increased margin for better spacing */
+        }
+
+        .result-details strong {
+            width: 30%;
+            font-weight: bold;
+            color: black; /* Updated text color */
+        }
+
+        .result-details span {
+            width: 60%;
+        }
+
+        .sgpa {
+            font-size: 24px;
+            color: darkgreen; /* Updated text color */
+            margin-top: 20px;
+        }
+
+        .footer {
+            margin-top: 20px;
+            font-size: 14px;
+            color: #6c757d; /* Updated text color */
+        }
+    </style>
+
+    <div class="result-details">
+        <h1>SGPA Results</h1>
+        <div><strong>Name:</strong><span>{{ name }}</span></div>
+        <div><strong>ID:</strong><span>{{ id }}</span></div>
+        <div><strong>Department:</strong><span>{{ br }}</span></div>
+        <div><strong>Year:</strong><span>{{ yea }}</span></div>
+        <div><strong>Semester:</strong><span>{{ sem }}</span></div>
+        <div><strong>Program:</strong><span>{{ sec }}</span></div>
+        <div class="sgpa"><strong>SGPA:</strong><span>{{ sgpa }}</span></div>
+    </div>
+
+    <div class="footer">
+        <p>Thank you for using our SGPA Calculator.</p>
+    </div>
+{% endblock %}

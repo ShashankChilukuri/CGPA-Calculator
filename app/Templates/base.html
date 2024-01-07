@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Default Title{% endblock %}</title>
+
+    <!-- Add your styles here or link to an external stylesheet -->
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            min-height: 100vh;
+            background-size: cover;
+            background-position: center;
+        }
+
+        .calculator-bar {
+            background-color: white;
+            color: white;
+            text-align: center;
+            padding: 10px 0;
+        }
+
+        header {
+            background-color: #333;
+            overflow: hidden;
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 20px;
+            box-sizing: border-box;
+        }
+
+        nav {
+            display: flex;
+            align-items: flex-start;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            padding: 15px 20px;
+            margin: 0;
+            transition: background-color 0.3s;
+        }
+
+        nav a:hover {
+            background-color: #555;
+        }
+
+        .dropdown {
+            display: inline-block;
+        }
+
+        .dropdown button {
+            color: white;
+            text-align: center;
+            background: none;
+            border: none;
+            padding: 15px 20px;
+            margin: 0;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .dropdown button:hover {
+            background-color: #555;
+        }
+
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #f9f9f9;
+            box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+            z-index: 1;
+            border-radius: 5px;
+            margin-top: 10px;
+        }
+
+        .dropdown-content a {
+            color: black;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+            transition: background-color 0.3s;
+        }
+
+        .dropdown-content a:hover {
+            background-color: #ddd;
+        }
+
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+
+        h1 {
+            color: #333;
+            margin: 0;
+        }
+
+        .page-content {
+            width: 75%;
+            display: flex;
+            justify-content: space-around;
+            align-items: flex-start;
+            flex-wrap: wrap;
+            padding: 30px;
+            box-sizing: border-box;
+            background-color: #f8f8f8;
+            border-radius: 20px;
+            box-shadow: 0 8px 8px rgba(0, 0, 0.1, 0.1);
+            margin-top: 50px;
+        }
+
+        .container {
+            width: 48%;
+            box-sizing: border-box;
+            background-color: #fff;
+            border-radius: 15px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            margin-bottom: 30px;
+            padding: 20px;
+            transition: transform 0.3s ease-in-out; /* Added transition property */
+        }
+
+        .container:hover {
+            transform: scale(1.05);
+        }
+
+        .container h2 {
+            text-align: center;
+            margin-bottom: 15px;
+            color: #333;
+        }
+
+        .container p {
+            text-align: center;
+            color: #666;
+            line-height: 1.5;
+        }
+
+        .container a {
+            color: #007BFF;
+            text-decoration: underline;
+        }
+
+        .container a:hover {
+            text-decoration: none;
+            color: #0056b3;
+        }
+
+        .footer {
+            color: #333;
+            text-align: center;
+            margin-top: 30px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Calculator Bar -->
+    <div class="calculator-bar">
+        <h1>CGPA Calculator</h1>
+    </div>
+
+    <!-- Header with Navigation and Heading -->
+    <header>
+        <!-- Navigation Bar -->
+        <nav>
+            <a href="{% url 'home' %}">Home</a>
+
+            <div class="dropdown">
+                <button>First Year</button>
+                <div class="dropdown-content">
+                    <a href="{% url 'firstcourses' %}">Odd Sem</a>
+                    <a href="{% url 'firsteven' %}">Even Sem</a>
+                </div>
+            </div>
+
+            <div class="dropdown">
+                <button>Second Year</button>
+                <i class="fa fa-caret-down"></i>
+                <div class="dropdown-content">
+                    <a href="{% url 'coursesthird' %}">Odd Sem</a>
+                    <a href="{% url 'evensc' %}">Even Sem</a>
+                </div>
+            </div>
+
+            <a href="{% url 'about' %}">About</a>
+        </nav>
+
+        <!-- Heading -->
+        <h1>CGPA Calculator</h1>
+    </header>
+
+    <!-- Additional Container Below Header -->
+    {% block content %}
+    <style>
+    .home-content {
+        text-align: center;
+        padding: 30px;
+        box-sizing: border-box;
+    }
+
+    .content-container {
+        background-color: #fff;
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        margin: 20px 0;
+    }
+
+    .content-title {
+        font-size: 24px;
+        color: #333;
+        margin-bottom: 10px;
+    }
+
+    .content-description {
+        font-size: 18px;
+        color: #666;
+        line-height: 1.6;
+    }
+
+    .note {
+        font-size: 18px;
+        color: red;
+        margin-bottom: 15px;
+    }
+</style>
+
+<div class="home-content">
+    <div class="content-container">
+        <h1 class="content-title">Welcome to our CGPA Calculator!</h1>
+        <p class="content-description">
+            where academic excellence meets simplicity!
+            Input your grades and credits effortlessly to compute your Cumulative Grade Point Average swiftly.
+            Our user-friendly interface empowers you to track your academic journey seamlessly,
+            providing insights into your performance trends. Set personalized goals, monitor progress, and
+            make informed decisions to enhance your educational experience. With visualized data and goal-setting
+            features, our tool ensures you stay on top of your academic game. Transform the way you manage your grades
+            and navigate your educational path with precision. Start your journey towards academic success today by harnessing
+            the power of our CGPA Calculator. Optimize your planning, elevate your achievements, and embrace a smarter approach
+            to academic excellence! </p>
+    </div>
+
+    <div class="content-container">
+        <h2 class="content-title">Uses</h2>
+        <p class="content-description">
+            Easily compute your CGPA for first-year odd semesters and second-year odd and even semesters.
+            Our user-friendly tool ensures accurate results. Follow simple instructions,
+            input your grades, and get instant calculations. Discover the benefits of time-saving and precision.
+            Explore success stories, tips for improvement, and academic resources on our site.
+            Stay organized with important dates and deadlines. Enhance your academic journey with interactive elements
+            and valuable insights. Make informed decisions about your grades. Start calculating your CGPA with ease!
+        </p>
+    </div>
+
+    <div class="note">
+        Note: **The results provided are approximate and may not be exact**
+    </div>
+</div>
+    {% endblock %}
+
+    <!-- Page Content -->
+    <div class="page-content">
+        <div class="container">
+            <h2><a href="{% url 'about' %}">About</a></h2>
+            <p>Know About Us.</p>
+        </div>
+
+        <div class="container">
+            <h2><a href="{% url 'feedback' %}">Feedback</a></h2>
+            <p>Provide Us Your Valuable Feedback.</p>
+            <!-- Add more content specific to the second container -->
+        </div>
+    </div>
+
+</body>
+
+</html>

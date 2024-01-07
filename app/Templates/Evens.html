@@ -1,0 +1,182 @@
+{% extends "base.html" %}
+
+{% block title %}Details{% endblock %}
+
+{% block content %}
+<style>
+    h1 {
+        text-align: center;
+    }
+
+    .form-group {
+        margin-bottom: 15px;
+    }
+
+    label {
+        display: block;
+        margin-bottom: 5px;
+    }
+
+    input {
+        width: 100%;
+        padding: 8px;
+        box-sizing: border-box;
+    }
+
+    .form-container {
+        width: 80%;
+        margin: auto;
+    }
+
+    .course-container {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+
+    .course {
+        width: 48%;
+        box-sizing: border-box;
+        margin-bottom: 20px;
+    }
+
+    .course:nth-child(even) {
+        margin-left: 4%;
+    }
+
+    .submit-button {
+        background-color: #ffcc00;
+        color: #ffffff;
+        padding: 10px 20px;
+        border: none;
+        border-radius: 5px;
+        font-size: 16px;
+        display: block;
+        margin: auto;
+        cursor: pointer;
+    }
+
+</style>
+<div class="form-container">
+    <form action="{% url 'eresult' %}" method="post">
+        {% csrf_token %}
+        <h1>Student Information</h1>
+        <div class="form-group">
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" required>
+        </div>
+        <div class="form-group">
+            <label for="rollnumber">Roll Number:</label>
+            <input type="text" id="rollnumber" name="rollnumber" required>
+        </div>
+        <div class="form-group">
+            <label for="dep">Department:</label>
+            <input type="text" id="dep" name="dep" required>
+        </div>
+
+        <h1>Marks</h1>
+       <input type="radio" id="Advance" name="course_type" value="Advance" required>
+        <label for="Advance">Advance</label>
+
+        <input type="radio" id="Regular" name="course_type" value="Regular" required>
+        <label for="Regular">Regular</label>
+
+
+        <div class="course-container">
+            <!-- PSQT -->
+            <div class="course">
+                <h3>PSQT</h3>
+                <div class="form-group">
+                    <label for="psqt-internals">Internals:</label>
+                    <input type="text" id="psqt-internals" name="psqt-internals" required>
+                </div>
+                <div class="form-group">
+                    <label for="psqt-externals">Externals:</label>
+                    <input type="text" id="psqt-externals" name="psqt-externals" required>
+                </div>
+            </div>
+
+            <!-- MERN -->
+            <div class="course">
+                <h3>MERN</h3>
+                <div class="form-group">
+                    <label for="mern-internals">Internals:</label>
+                    <input type="text" id="mern-internals" name="mern-internals" required>
+                </div>
+                <div class="form-group">
+                    <label for="mern-externals">Externals:</label>
+                    <input type="text" id="mern-externals" name="mern-externals" required>
+                </div>
+            </div>
+
+            <!-- DDAI -->
+            <div class="course">
+                <h3>DDAI</h3>
+                <div class="form-group">
+                    <label for="ddai-internals">Internals:</label>
+                    <input type="text" id="ddai-internals" name="ddai-internals" required>
+                </div>
+                <div class="form-group">
+                    <label for="ddai-externals">Externals:</label>
+                    <input type="text" id="ddai-externals" name="ddai-externals" required>
+                </div>
+            </div>
+
+            <!-- DAA -->
+            <div class="course">
+                <h3>DAA</h3>
+                <div class="form-group">
+                    <label for="daa-internals">Internals:</label>
+                    <input type="text" id="daa-internals" name="daa-internals" required>
+                </div>
+                <div class="form-group">
+                    <label for="daa-externals">Externals:</label>
+                    <input type="text" id="daa-externals" name="daa-externals" required>
+                </div>
+            </div>
+
+                <div class="course">
+                <h3>ATFL</h3>
+                <div class="form-group">
+                    <label for="atfl-internals">Internals:</label>
+                    <input type="text" id="atfl-internals" name="atfl-internals" required>
+                </div>
+                <div class="form-group">
+                    <label for="atfl-externals">Externals:</label>
+                    <input type="text" id="atfl-externals" name="atfl-externals" required>
+                </div>
+            </div>
+
+            <!-- NPS -->
+            <div class="course">
+                <h3>NPS</h3>
+                <div class="form-group">
+                    <label for="nps-internals">Internals:</label>
+                    <input type="text" id="nps-internals" name="nps-internals" required>
+                </div>
+                <div class="form-group">
+                    <label for="nps-externals">Externals:</label>
+                    <input type="text" id="nps-externals" name="nps-externals" required>
+                </div>
+            </div>
+
+            <!-- CLOUD -->
+            <div class="course">
+                <h3>CLOUD</h3>
+                <div class="form-group">
+                    <label for="cloud-internals">Internals:</label>
+                    <input type="text" id="cloud-internals" name="cloud-internals" required>
+                </div>
+                <div class="form-group">
+                    <label for="cloud-externals">Externals:</label>
+                    <input type="text" id="cloud-externals" name="cloud-externals" required>
+                </div>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <button type="submit" class="submit-button">Submit</button>
+        </div>
+    </form>
+</div>
+{% endblock %}

@@ -1,0 +1,71 @@
+{% extends "base.html" %}
+
+{% block title %}Home{% endblock %}
+
+{% block content %}
+<style>
+    .home-content {
+        text-align: center;
+        padding: 30px;
+        box-sizing: border-box;
+    }
+
+    .content-container {
+        background-color: #fff;
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        margin: 20px 0;
+    }
+
+    .content-title {
+        font-size: 24px;
+        color: #333;
+        margin-bottom: 10px;
+    }
+
+    .content-description {
+        font-size: 18px;
+        color: #666;
+        line-height: 1.6;
+    }
+
+    .note {
+        font-size: 18px;
+        color: red;
+        margin-bottom: 15px;
+    }
+</style>
+
+<div class="home-content">
+    <div class="content-container">
+        <h1 class="content-title">Welcome to our CGPA Calculator!</h1>
+        <p class="content-description">
+            where academic excellence meets simplicity!
+            Input your grades and credits effortlessly to compute your Cumulative Grade Point Average swiftly.
+            Our user-friendly interface empowers you to track your academic journey seamlessly,
+            providing insights into your performance trends. Set personalized goals, monitor progress, and
+            make informed decisions to enhance your educational experience. With visualized data and goal-setting
+            features, our tool ensures you stay on top of your academic game. Transform the way you manage your grades
+            and navigate your educational path with precision. Start your journey towards academic success today by harnessing
+            the power of our CGPA Calculator. Optimize your planning, elevate your achievements, and embrace a smarter approach
+            to academic excellence! </p>
+    </div>
+
+    <div class="content-container">
+        <h2 class="content-title">Uses</h2>
+        <p class="content-description">
+            Easily compute your CGPA for first-year odd semesters and second-year odd and even semesters.
+            Our user-friendly tool ensures accurate results. Follow simple instructions,
+            input your grades, and get instant calculations. Discover the benefits of time-saving and precision.
+            Explore success stories, tips for improvement, and academic resources on our site.
+            Stay organized with important dates and deadlines. Enhance your academic journey with interactive elements
+            and valuable insights. Make informed decisions about your grades. Start calculating your CGPA with ease!
+        </p>
+    </div>
+
+    <div class="note">
+        Note: The results provided are approximate and may not be exact.
+    </div>
+</div>
+{% endblock %}

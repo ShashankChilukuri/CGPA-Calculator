@@ -1,0 +1,63 @@
+{% extends "base.html" %}
+
+{% block title %}Feedback{% endblock %}
+
+{% block content %}
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        background-color: #f4f4f4;
+    }
+
+    .feedback-container {
+        text-align: center;
+        background-color: #fff;
+        padding: 30px;
+        border-radius: 10px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        width: 70%;
+        max-width: 600px; /* Adjust maximum width */
+        margin: 50px auto; /* Center the container */
+        box-sizing: border-box;
+    }
+
+    .feedback-label {
+        font-size: 20px;
+        margin-bottom: 10px;
+        display: block;
+        text-align: left;
+    }
+
+    .feedback-input {
+        width: 100%;
+        padding: 10px;
+        margin-bottom: 20px;
+        box-sizing: border-box;
+        border: 1px solid #ddd;
+        border-radius: 5px;
+    }
+
+    .feedback-submit {
+        background-color: #4CAF50;
+        color: white;
+        padding: 12px 20px;
+        font-size: 16px;
+        border: none;
+        cursor: pointer;
+        border-radius: 5px;
+    }
+</style>
+
+<div class="feedback-container">
+    <h1>Feedback</h1>
+
+    <form method="post" action="{% url 'thankyou' %}">
+        {% csrf_token %}
+
+        <label for="feedback" class="feedback-label">Share your feedback with us:</label>
+        <textarea name="feedback" id="feedback" class="feedback-input" rows="6" placeholder="Enter your feedback here" required></textarea>
+
+        <button type="submit" class="feedback-submit">Submit Feedback</button>
+    </form>
+</div>
+{% endblock %}

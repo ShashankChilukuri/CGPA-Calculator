@@ -1,0 +1,209 @@
+{% extends "base.html" %}
+
+{% block title %}Details{% endblock %}
+
+{% block content %}
+<style>
+    h1 {
+        text-align: center;
+    }
+
+    .form-group {
+        margin-bottom: 15px;
+    }
+
+    label {
+        display: block;
+        margin-bottom: 5px;
+    }
+
+    input {
+        width: 100%;
+        padding: 8px;
+        box-sizing: border-box;
+    }
+
+    .form-container {
+        width: 80%;
+        margin: auto;
+    }
+
+    .course-container {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+
+    .course {
+        width: 48%;
+        box-sizing: border-box;
+        margin-bottom: 20px;
+    }
+
+    .course:nth-child(even) {
+        margin-left: 4%;
+    }
+
+    .submit-button {
+        background-color: #ffcc00;
+        color: #ffffff;
+        padding: 10px 20px;
+        border: none;
+        border-radius: 5px;
+        font-size: 16px;
+        display: block;
+        margin: auto;
+        cursor: pointer;
+    }
+
+</style>
+<div class="form-container">
+    <form action="{% url 'result' %}" method="POST">
+        {% csrf_token %}
+        <h1>Student Information</h1>
+        <div class="form-group">
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" required>
+        </div>
+        <div class="form-group">
+            <label for="rollNumber">Roll Number:</label>
+            <input type="text" id="rollNumber" name="rollNumber" required>
+        </div>
+        <div class="form-group">
+            <label for="dep">Department:</label>
+            <input type="text" id="dep" name="dep" required>
+        </div>
+        <h1>Marks</h1>
+        <input type="radio" id="Advance" name="course_type" value="Advance" required>
+        <label for="Advance">Advance</label>
+
+        <input type="radio" id="Regular" name="course_type" value="Regular" required>
+        <label for="Regular">Regular</label>
+
+        <div class="course-container">
+            <!-- Course: DBMS -->
+            <div class="course">
+                <h3>DBMS</h3>
+                <div class="form-group">
+                    <label for="dbms-internals"> Internals:</label>
+                    <input type="number" id="dbms-internals" name="dbms-internals" required>
+                </div>
+                <div class="form-group">
+                    <label for="dbms-externals"> Externals:</label>
+                    <input type="number" id="dbms-externals" name="dbms-externals" required>
+                </div>
+            </div>
+
+            <!-- Course: AOOP -->
+            <div class="course">
+                <h3>AOOP</h3>
+                <div class="form-group">
+                    <label for="aoop-internals">Internals:</label>
+                    <input type="number" id="aoop-internals" name="aoop-internals" required>
+                </div>
+                <div class="form-group">
+                    <label for="aoop-externals">Externals:</label>
+                    <input type="number" id="aoop-externals" name="aoop-externals" required>
+                </div>
+            </div>
+
+            <!-- Course: OS -->
+            <div class="course">
+                <h3>OS</h3>
+                <div class="form-group">
+                    <label for="os-internals">Internals:</label>
+                    <input type="number" id="os-internals" name="os-internals" required>
+                </div>
+                <div class="form-group">
+                    <label for="os-externals">Externals:</label>
+                    <input type="number" id="os-externals" name="os-externals" required>
+                </div>
+            </div>
+
+            <!-- Course: MP -->
+            <div class="course">
+                <h3>MP</h3>
+                <div class="form-group">
+                    <label for="mp-internals">Internals:</label>
+                    <input type="number" id="mp-internals" name="mp-internals" required>
+                </div>
+                <div class="form-group">
+                    <label for="mp-externals">Externals:</label>
+                    <input type="number" id="mp-externals" name="mp-externals" required>
+                </div>
+            </div>
+
+            <!-- Course: ASE -->
+            <div class="course">
+                <h3>ASE</h3>
+                <div class="form-group">
+                    <label for="ase-internals">Internals:</label>
+                    <input type="number" id="ase-internals" name="ase-internals" required>
+                </div>
+                <div class="form-group">
+                    <label for="ase-externals">Externals:</label>
+                    <input type="number" id="ase-externals" name="ase-externals" required>
+                </div>
+            </div>
+
+            <!-- Course: ESE -->
+            <div class="course">
+                <h3>ESE</h3>
+                <div class="form-group">
+                    <label for="ese-internals">Internals:</label>
+                    <input type="number" id="ese-internals" name="ese-internals" required>
+                </div>
+                <div class="form-group">
+                    <label for="ese-externals">Externals:</label>
+                    <input type="number" id="ese-externals" name="ese-externals" required>
+                </div>
+            </div>
+
+            <!-- Course: Epics -->
+            <div class="course">
+                <h3>Epics</h3>
+                <div class="form-group">
+                    <label for="epics-internals">Internals:</label>
+                    <input type="number" id="epics-internals" name="epics-internals" required>
+                </div>
+                <div class="form-group">
+                    <label for="epics-externals">Externals:</label>
+                    <input type="number" id="epics-externals" name="epics-externals" required>
+                </div>
+            </div>
+
+            <!-- Course: PFSD -->
+            <div class="course">
+                <h3>PFSD</h3>
+                <div class="form-group">
+                    <label for="pfsd-internals">Internals:</label>
+                    <input type="number" id="pfsd-internals" name="pfsd-internals" required>
+                </div>
+                <div class="form-group">
+                    <label for="pfsd-externals">Externals:</label>
+                    <input type="number" id="pfsd-externals" name="pfsd-externals" required>
+                </div>
+            </div>
+
+            <!-- Course: P&C -->
+            <div class="course">
+                <h3>P&C</h3>
+                <div class="form-group">
+                    <label for="pc-internals">Internals:</label>
+                    <input type="number" id="pc-internals" name="pc-internals" required>
+                </div>
+                <div class="form-group">
+                    <label for="pc-externals">Externals:</label>
+                    <input type="number" id="pc-externals" name="pc-externals" required>
+                </div>
+            </div>
+
+            <!-- Add more courses here as needed -->
+        </div>
+
+        <div class="form-group">
+            <button type="submit" class="submit-button">Submit</button>
+        </div>
+    </form>
+</div>
+{% endblock %}

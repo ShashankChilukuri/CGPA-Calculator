@@ -1,0 +1,41 @@
+<!-- first_year_even_semester.html -->
+{% extends "base.html" %}
+
+{% block title %}First Year - Even Semester{% endblock %}
+
+{% block content %}
+<style>
+    .form-container {
+        width: 80%;
+        margin: auto;
+        text-align: center;
+        padding: 20px;
+    }
+
+    h1 {
+        color: #333;
+    }
+
+    p {
+        color: #666;
+        line-height: 1.6;
+    }
+
+    .alert {
+        background-color: #f8d7da;
+        color: #721c24;
+        padding: 15px;
+        border: 1px solid #f5c6cb;
+        border-radius: 5px;
+        margin-bottom: 20px;
+    }
+</style>
+
+<div class="form-container">
+    <h1>Even Semester Courses Information</h1>
+
+    <div class="alert">
+        <p>Even semester courses for first-year students are not available yet. Please check back later.</p>
+    </div>
+</div>
+{% endblock %}

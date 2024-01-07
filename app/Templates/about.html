@@ -1,0 +1,49 @@
+<!-- about.html -->
+{% extends "base.html" %}
+
+{% block title %}About Us{% endblock %}
+
+{% block content %}
+<style>
+    .container {
+        max-width: 800px;
+        margin: auto;
+        padding: 20px;
+    }
+
+    .about-section,
+    .mission-section,
+    .join-section {
+        margin-bottom: 30px;
+    }
+
+    h1, h2 {
+        color: #333;
+    }
+    h1{
+    text-align:center;
+    }
+    p {
+        color: #666;
+        line-height: 1.6;
+    }
+</style>
+    <div class="container">
+        <div class="about-section">
+            <h1>About Us</h1>
+            <p>Welcome to our CGPA Calculator – where simplicity meets accuracy. We are a close-knit team of four friends passionate about education and technology.</p>
+        </div>
+
+        <div class="mission-section">
+            <h2>Our Mission</h2>
+            <p>Our mission is to provide an intuitive platform for students to effortlessly calculate their CGPA. With a focus on user-friendly design and precision, we aim to empower students on their academic journey.</p>
+        </div>
+
+        <div class="join-section">
+            <h2>Join Us</h2>
+            <p>Join us in streamlining your grading experience – because every GPA counts! Whether you're a student seeking an efficient CGPA calculator or a supporter of our mission, we welcome you to be a part of our community.</p>
+        </div>
+    </div>
+{% endblock %}
+
+

@@ -1,0 +1,169 @@
+{% extends "base.html" %}
+
+{% block title %}Details{% endblock %}
+
+{% block content %}
+<style>
+    h1 {
+        text-align: center;
+    }
+
+    .form-group {
+        margin-bottom: 15px;
+    }
+
+    label {
+        display: block;
+        margin-bottom: 5px;
+    }
+
+    input {
+        width: 100%;
+        padding: 8px;
+        box-sizing: border-box;
+        margin-bottom: 10px;
+    }
+
+    .form-container {
+        width: 80%;
+        margin: auto;
+    }
+
+    .course-container {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        margin: auto;
+    }
+
+    .course {
+        width: 48%;
+        box-sizing: border-box;
+        margin-bottom: 20px;
+    }
+
+    .course:nth-child(even) {
+        margin-left: 4%;
+    }
+
+    .submit-button {
+        background-color: #ffcc00;
+        color: #ffffff;
+        padding: 10px 20px;
+        border: none;
+        border-radius: 5px;
+        font-size: 16px;
+        display: block;
+        margin: auto;
+        cursor: pointer;
+    }
+
+</style>
+
+<div class="form-container">
+    <form action="{% url 'firstresult' %}" method="POST">
+        {% csrf_token %}
+        <h1>Student Information</h1>
+        <div class="form-group">
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" required>
+        </div>
+        <div class="form-group">
+            <label for="rollNumber">Roll Number:</label>
+            <input type="text" id="rollNumber" name="rollNumber" required>
+        </div>
+        <div class="form-group">
+            <label for="dep">Department:</label>
+            <input type="text" id="dep" name="dep" required>
+        </div>
+
+        <h1>Marks</h1>
+
+        <div class="course-container">
+            <!-- Course: DTI -->
+            <div class="course">
+                <h3>Course: DTI</h3>
+                <div class="form-group">
+                    <label for="dti-internals">DTI Internals:</label>
+                    <input type="number" id="dti-internals" name="dti-internals" required>
+                </div>
+                <div class="form-group">
+                    <label for="dti-externals">DTI Externals:</label>
+                    <input type="number" id="dti-externals" name="dti-externals" required>
+                </div>
+            </div>
+
+            <!-- Course: CTSD -->
+            <div class="course">
+                <h3>Course: CTSD</h3>
+                <div class="form-group">
+                    <label for="ctsd-internals">CTSD Internals:</label>
+                    <input type="number" id="ctsd-internals" name="ctsd-internals" required>
+                </div>
+                <div class="form-group">
+                    <label for="ctsd-externals">CTSD Externals:</label>
+                    <input type="number" id="ctsd-externals" name="ctsd-externals" required>
+                </div>
+            </div>
+
+            <!-- Course: DTW -->
+            <div class="course">
+                <h3>Course: DTW</h3>
+                <div class="form-group">
+                    <label for="dtw-internals">DTW Internals:</label>
+                    <input type="number" id="dtw-internals" name="dtw-internals" required>
+                </div>
+                <div class="form-group">
+                    <label for="dtw-externals">DTW Externals:</label>
+                    <input type="number" id="dtw-externals" name="dtw-externals" required>
+                </div>
+            </div>
+
+            <!-- Course: IOT -->
+            <div class="course">
+                <h3>Course: IOT</h3>
+                <div class="form-group">
+                    <label for="iot-internals">IOT Internals:</label>
+                    <input type="number" id="iot-internals" name="iot-internals" required>
+                </div>
+                <div class="form-group">
+                    <label for="iot-externals">IOT Externals:</label>
+                    <input type="number" id="iot-externals" name="iot-externals" required>
+                </div>
+            </div>
+
+            <!-- Course: DS -->
+            <div class="course">
+                <h3>Course: DS</h3>
+                <div class="form-group">
+                    <label for="ds-internals">DS Internals:</label>
+                    <input type="number" id="ds-internals" name="ds-internals" required>
+                </div>
+                <div class="form-group">
+                    <label for="ds-externals">DS Externals:</label>
+                    <input type="number" id="ds-externals" name="ds-externals" required>
+                </div>
+            </div>
+
+            <!-- Course: IPE -->
+            <div class="course">
+                <h3>Course: IPE</h3>
+                <div class="form-group">
+                    <label for="ipe-internals">IPE Internals:</label>
+                    <input type="number" id="ipe-internals" name="ipe-internals" required>
+                </div>
+                <div class="form-group">
+                    <label for="ipe-externals">IPE Externals:</label>
+                    <input type="number" id="ipe-externals" name="ipe-externals" required>
+                </div>
+            </div>
+
+            <!-- Add more courses here as needed -->
+        </div>
+
+        <div class="form-group">
+            <button type="submit" class="submit-button">Submit</button>
+        </div>
+    </form>
+</div>
+{% endblock %}
