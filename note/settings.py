@@ -2,7 +2,7 @@ import os
 from pathlib import Path
 
 BASE_DIR = Path(__file__).resolve().parent.parent
-SECRET_KEY = os.environ.get('DJANGO_SECRET_KEY', 'django-insecure-g(91i48rz!cyvz^h=gkdbufl#(o@852rq9#!4646o3hy3d)3sw')
+SECRET_KEY = os.environ.get('DJANGO_SECRET_KEY', 'django-insecure(g(91i48rz!cyvz^h=gkdbufl#(o@852rq9#!4646o3hy3d)3sw')
 DEBUG = False
 ALLOWED_HOSTS = ['*']
 INSTALLED_APPS = [
@@ -42,12 +42,8 @@ TEMPLATES = [
 WSGI_APPLICATION = 'note.wsgi.application'
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.mysql',
-        'NAME': os.environ.get('DB_NAME', 'your_database_name'),
-        'USER': os.environ.get('DB_USER', 'your_mysql_username'),
-        'PASSWORD': os.environ.get('DB_PASSWORD', 'your_mysql_password'),
-        'HOST': os.environ.get('DB_HOST', 'localhost'),
-        'PORT': os.environ.get('DB_PORT', '3306'),
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': BASE_DIR / 'db.sqlite3',
     }
 }
 AUTH_PASSWORD_VALIDATORS = [
